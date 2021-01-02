@@ -12,6 +12,9 @@
 
 #include <string>
 
+#ifndef RACIONAL_H
+#define RACIONAL_H
+
 /** Clase declarada Racional
  *
  */
@@ -35,3 +38,5 @@ class Racional {
   static Racional FromString(std::string string);
   std::string ToString();
 };
+
+#endif

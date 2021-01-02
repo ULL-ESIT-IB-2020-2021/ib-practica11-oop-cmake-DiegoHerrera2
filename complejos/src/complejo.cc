@@ -10,9 +10,9 @@
  *
  */
 
-#include <iostream>
+#include "complejo.h"
 
-#include "complejo.h"    
+#include <iostream>
 
 /** Crea un nuevo número complejo dadas su parte real e imaginaria.
  *
@@ -20,8 +20,7 @@
  *  @param[in] complex Parte imaginaria
  *  @return El número complejo creado
  */
-Complejo::Complejo(int real, int complex)
-{
+Complejo::Complejo(int real, int complex) {
   real_ = real;
   complex_ = complex;
 }
@@ -30,8 +29,7 @@ Complejo::Complejo(int real, int complex)
  *
  *  @return El número complejo creado
  */
-Complejo::Complejo()
-{
+Complejo::Complejo() {
   real_ = 0;
   complex_ = 0;
 }
@@ -40,22 +38,19 @@ Complejo::Complejo()
  *
  *  @return Parte real del número complejo
  */
-int Complejo::GetRealPart() {
-  return real_;
-}
+int Complejo::GetRealPart() { return real_; }
 
 /** Obtiene la parte imaginaria del número complejo.
  *
  *  @return Parte imaginaria del número complejo
  */
-int Complejo::GetComplexPart() {
-  return complex_;
-}
+int Complejo::GetComplexPart() { return complex_; }
 
 /** Imprime el número complejo en pantalla en su forma binómica.
  */
 void Complejo::print() {
-  std::cout << GetRealPart() << (GetComplexPart() > 0 ? "+" : "") << GetComplexPart() << "i" << std::endl;
+  std::cout << GetRealPart() << (GetComplexPart() > 0 ? "+" : "")
+            << GetComplexPart() << "i" << std::endl;
 }
 
 /** Suma dos números complejos.

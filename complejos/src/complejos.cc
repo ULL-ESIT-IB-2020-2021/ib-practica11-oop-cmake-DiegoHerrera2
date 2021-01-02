@@ -10,12 +10,13 @@
  *
  */
 
-#include <iostream>   
-#include "complejo.h"    
+#include <iostream>
+
+#include "complejo.h"
 
 /** Main function
  */
-int main () {
+int main() {
   Complejo complejo1{4, 5}, complejo2{7, -8};
   Complejo resultado;
   resultado = Complejo::Add(complejo1, complejo2);

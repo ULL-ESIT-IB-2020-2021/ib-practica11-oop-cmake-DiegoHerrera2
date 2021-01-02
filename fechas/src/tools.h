@@ -12,7 +12,8 @@
 
 #include <iostream>
 
-const std::string kHelpText = "Este programa representa y gestiona fechas que el usuario \
+const std::string kHelpText =
+    "Este programa representa y gestiona fechas que el usuario \
 ha de introducir por línea de comandos para la ejecución del programa";
 
 void Usage(int argc, char *argv[]);

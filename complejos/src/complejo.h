@@ -12,6 +12,9 @@
 
 /** Declarada la clase Complejo
  */
+
+#ifndef COMPLEJO_H
+#define COMPLEJO_H
 class Complejo {
  public:
   Complejo();
@@ -28,3 +31,5 @@ class Complejo {
   int real_;
   int complex_;
 };
+
+#endif
