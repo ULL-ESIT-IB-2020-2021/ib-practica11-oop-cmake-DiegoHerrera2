@@ -4,8 +4,8 @@
 # Informática Básica
 #
 # @author Diego Herrera Mendoza
-# @date 21.dec.2020
-# @brief CMakeLists for Complejos
+# @date 21 dec 2020
+# @brief CMakeLists.txt example
 # CMakeLists.txt defines the whole build
 # CMake reads CMakeLists.txt sequentially
 #
@@ -20,9 +20,9 @@
 cmake_minimum_required(VERSION 3.1)  # Mandatory
 
 # set the project name 
-project(complejos                # Mandatory
+project(racionales               # Mandatory
     VERSION 1.0
-    DESCRIPTION "A simple CMake project for the Complejos application"
+
     LANGUAGES CXX)
 
 # specify the C++ standard
@@ -40,18 +40,24 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 # tell cmake where to look for *.h files
 include_directories(${PROJECT_SOURCE_DIR}/src)
 
-# Adds an executable target called "complejos" to be built from the source files listed in the command invocation.
-add_executable(complejos
-    src/complejo.h
-    src/complejo.cc
-    src/complejos.cc)
+# create library " libtools "
+add_library(tools src/tools.cc)
 
+# Adds an executable target called "racionales" to be built from the source files listed in the command invocation.
+add_executable(racional
+    src/racional.h
+    src/racional.cc
+    src/racionales.cc)
+
+# tell the linker to bind these objects together
+# It's important to place target_link_libraries after the add_executable and find_package lines, so all linked components are known.
+target_link_libraries(racional tools)
 
 # Add expected compiler features to a target.
-target_compile_features(complejos PRIVATE cxx_std_14)
+target_compile_features(racional PRIVATE cxx_std_14)
 
 # Add compile options to a target.
-target_compile_options(complejos PRIVATE -Wall -Wextra -Wpedantic)
+target_compile_options(racional PRIVATE -Wall -Wextra -Wpedantic)
 
 
 ############################################################
@@ -68,7 +74,7 @@ if(BUILD_DOCUMENTATION)
          message(FATAL_ERROR "Doxygen is needed to build the documentation.")
     endif()
 
-    set(doxyfile_in ${CMAKE_CURRENT_SOURCE_DIR}/complejos.Doxyfile)
+    set(doxyfile_in ${CMAKE_CURRENT_SOURCE_DIR}/racionales.Doxyfile)
     set(doxyfile ${CMAKE_CURRENT_BINARY_DIR}/doxyfile)
 
     configure_file(${doxyfile_in} ${doxyfile} @ONLY)

@@ -37,7 +37,7 @@ class Racional {
   static bool isEqual(Racional first, Racional second);
   static Racional FromString(std::string string);
   std::string ToString();
-  
+  void Average(Racional first, Racional second);
 };
 
 #endif
